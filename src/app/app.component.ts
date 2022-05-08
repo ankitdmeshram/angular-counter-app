@@ -5,6 +5,34 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
-  title = 'counter-app';
+  title: string = 'Counter App';
+  count: number = 0;
+
+  handleIncrease = () => {
+
+    if (this.count % 10 === 0) {
+      this.count = this.count + 15;
+    } else {
+      this.count = this.count + 1;
+    }
+
+  };
+
+  handleDecrease = () => {
+
+    if (this.count <= 0) {
+      this.count = 0;
+    } else {
+      this.count = this.count - 1;
+
+    }
+
+  };
+
+  handleReset = () => {
+    this.count = 0;
+  };
+
 }
